@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextviewLight" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextviewRegular" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextviewRegular.10">
+        <item name="android:textSize">@dimen/sp_10</item>
+    </style>
+
+
+    <style name="TextviewRegular.16">
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+    <style name="TextviewRegular.16.colorPrimaryGreen">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
+
+
+    <style name="TextviewBold" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextviewBold.10">
+        <item name="android:textSize">@dimen/sp_10</item>
+    </style>
+
+    <style name="TextviewBold.32">
+        <item name="android:textSize">@dimen/sp_32</item>
+    </style>
+
+    <style name="TextviewBold.32.BlackLightTitle">
+        <item name="android:textColor">@color/black_light_title</item>
+    </style>
+
+    <style name="TextviewBoldExtra" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/montserrat_extra_bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="PrimaryEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:padding">@dimen/dp_18</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:layout_height">@dimen/dp_54</item>
+        <item name="android:background">@drawable/bg_primary_edit_text</item>
+    </style>
+</resources>

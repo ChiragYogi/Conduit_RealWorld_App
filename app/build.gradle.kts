@@ -5,17 +5,17 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
     id ("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp")
+    //id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.example.conduitrealworldapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.conduitrealworldapp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -36,11 +36,11 @@ android {
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -57,7 +57,7 @@ dependencies {
 
     //glied
     implementation("com.github.bumptech.glide:glide:4.16.0")
-    ksp ("com.github.bumptech.glide:compiler:4.11.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
 
     //navigation
     implementation ("androidx.navigation:navigation-fragment-ktx:2.7.3")
@@ -69,7 +69,7 @@ dependencies {
 
     //hilt
     implementation("com.google.dagger:hilt-android:2.44")
-    ksp ("com.google.dagger:hilt-compiler:2.44")
+    annotationProcessor ("com.google.dagger:hilt-compiler:2.44")
 
 
     // ViewModel

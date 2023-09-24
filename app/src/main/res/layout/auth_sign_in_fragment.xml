@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.auth.SignInFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextviewBold.32.BlackLightTitle"
+        android:text="@string/label_sign_in" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewNeedAnAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_need_an_account"
+        style="@style/TextviewRegular.16.colorPrimaryGreen"
+        android:layout_marginTop="@dimen/dp_18" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_marginStart="@dimen/dp_18"
+        android:hint="@string/hint_email"
+        style="@style/PrimaryEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_marginStart="@dimen/dp_18"
+        android:hint="@string/hint_password"
+        style="@style/PrimaryEditText" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="@dimen/sp_16"
+        android:paddingStart="@dimen/dp_18"
+        android:paddingEnd="@dimen/dp_18"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:background="@drawable/bg_primary_button"
+        android:layout_marginTop="@dimen/dp_18" />
+
+</LinearLayout>
