@@ -12,10 +12,17 @@
         tools:layout="@layout/auth_sign_in_fragment" >
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment" >
+        </action>
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.conduitrealworldapp.ui.auth.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment"
+        tools:layout="@layout/auth_sign_up_fragment">
+        <argument
+            android:name="fromSignIn"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
 </navigation>
