@@ -8,40 +8,37 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.unit.sp
-import com.example.conduitrealworldapp.R
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.example.conduitrealworldapp.R
 import com.example.conduitrealworldapp.components.AppTextField
-import com.example.conduitrealworldapp.ui.auth.viewmodel.SignInViewModel
-
-
+import com.example.conduitrealworldapp.ui.auth.viewmodel.SignUpViewModel
 
 @Composable
-fun SignInScreen(modifier: Modifier, navController: NavHostController,) {
+fun SignUpScreen(modifier: Modifier, navController: NavHostController) {
 
-   // val signInViewModel:SignInViewModel = viewModel()
-    SignInScreenContent(modifier = modifier, onSignClick = {
-        //call signup api here
-        navController.navigate("Sign up")
-    })
+    val signUpViewModel: SignUpViewModel = viewModel()
+    SignUpScreenContent(signUpViewModel,onSignUpClick={
+        //do signup api call here
+    },modifier)
 }
 
 @Composable
-fun SignInScreenContent(
-    modifier: Modifier,
-    viewModel: SignInViewModel = viewModel(),
-    onSignClick: () -> Unit
+fun SignUpScreenContent(
+    signUpViewModel: SignUpViewModel,
+    onSignUpClick: () -> Unit,
+    modifier: Modifier
 ) {
     Column(
         verticalArrangement = Arrangement.Center,
@@ -56,7 +53,7 @@ fun SignInScreenContent(
         )
 
         Text(
-            text = stringResource(id = R.string.label_sign_in),
+            text = stringResource(id = R.string.label_sign_up),
             style = TextStyle(
                 color = colorResource(
                     id = R.color.black_light_title,
@@ -67,7 +64,7 @@ fun SignInScreenContent(
             )
 
         Text(
-            text = stringResource(id = R.string.label_need_an_account),
+            text = stringResource(id = R.string.label_have_an_account),
             style = TextStyle(
                 color = colorResource(
                     id = R.color.primary_color
@@ -79,28 +76,34 @@ fun SignInScreenContent(
         )
 
         AppTextField(
-            textFieldValue = viewModel.email,
-            onValueChange = { value -> viewModel.updateEmail(value) },
+            textFieldValue = signUpViewModel.email,
+            onValueChange = { value -> signUpViewModel.updateEmail(value) },
             hint = stringResource(id = R.string.hint_email), modifier = paddingTopLeftRight
         )
 
         AppTextField(
-            textFieldValue = viewModel.password,
-            onValueChange = { value -> viewModel.updatePassword(value) },
+            textFieldValue = signUpViewModel.userName,
+            onValueChange = { value -> signUpViewModel.updateUserName(value) },
+            hint = stringResource(id = R.string.hint_user_name), modifier = paddingTopLeftRight
+        )
+
+        AppTextField(
+            textFieldValue = signUpViewModel.password,
+            onValueChange = { value -> signUpViewModel.updatePassword(value) },
             hint = stringResource(id = R.string.hint_password), modifier = paddingTopLeftRight
         )
 
         Button(
-            onClick = onSignClick, colors = ButtonDefaults.buttonColors(
+            onClick = onSignUpClick, colors = ButtonDefaults.buttonColors(
                 containerColor = colorResource(id = R.color.primary_color)
-            ), shape = RoundedCornerShape(8.dp), modifier = paddingTopLeftRight
+            ), shape = RoundedCornerShape(8.dp), modifier = paddingTopLeftRight,
         ) {
-            Text(text = stringResource(id = R.string.label_sign_in),style=TextStyle(
+            Text(text = stringResource(id = R.string.label_sign_up),style= TextStyle(
                 fontSize = 16.sp, fontWeight = FontWeight.Normal,
                 color = Color.White
-            ))
+            )
+            )
         }
 
     }
 }
-
