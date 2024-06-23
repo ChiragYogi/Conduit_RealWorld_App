@@ -1,4 +1,4 @@
-package com.example.conduitrealworldapp.ui.auth
+package com.example.conduitrealworldapp.ui.auth.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
